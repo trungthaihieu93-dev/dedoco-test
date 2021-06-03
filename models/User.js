@@ -1,7 +1,8 @@
-const mongoose, { Schema } = require('mongoose');
+const mongoose = require('mongoose');
+const { Schema, SchemaTypes } = mongoose;
 
 module.exports = mongoose.model('User', new Schema({
-  firstName: 'String',
-  lastName: 'String',
-  email: 'String'
+  firstName: SchemaTypes.String,
+  lastName: SchemaTypes.String,
+  email: SchemaTypes.String
 }));

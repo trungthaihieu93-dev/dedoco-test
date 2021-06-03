@@ -1,7 +1,8 @@
-const mongoose, { Schema } = require('mongoose');
+const mongoose = require('mongoose');
+const { Schema, SchemaTypes } = mongoose;
 
-module.exports = mongoose.model('User', new Schema({
-  text: 'String',
-  description: 'String',
-  created_at: 'Date'
+module.exports = mongoose.model('Document', new Schema({
+  text: SchemaTypes.String,
+  description: SchemaTypes.String,
+  created_at: SchemaTypes.Date
 }));

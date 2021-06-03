@@ -1,7 +1,8 @@
-const mongoose, { Schema, Types } = require('mongoose');
+const mongoose = require('mongoose');
+const { Schema, SchemaTypes } = mongoose;
 
 module.exports = mongoose.model('Signature', new Schema({
-  data: 'String',
-  created_at: 'Date',
-  user: Types.ObjectId,
+  data: SchemaTypes.String,
+  created_at: SchemaTypes.Date,
+  user: SchemaTypes.ObjectId,
 }));
