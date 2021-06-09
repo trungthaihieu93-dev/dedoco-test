@@ -19,7 +19,7 @@ module.exports = async (targetEmail, link) => {
   });
 
   // send mail with defined transport object
-  let mailContent = await transporter.sendMail({
+  await transporter.sendMail({
     from: '"Tony Thai" <tony.thai@illuminos.sg>', // sender address
     to: targetEmail, // list of receivers
     subject: "Document Sign Link ✔", // Subject line
