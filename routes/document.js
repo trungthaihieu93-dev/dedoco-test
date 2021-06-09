@@ -1,5 +1,6 @@
 "use strict";
 const router = require('express').Router();
+const uploadMiddleware = require('multer')({ dest: 'docs/' });
 
 const {
   handleCreateDocumentSigningProcess,
@@ -7,6 +8,6 @@ const {
 } = require('../controllers/document');
 
 router.get('/signDocument', handleSignDocument)
-  .post('/createDocumentSigningProcess', handleCreateDocumentSigningProcess);
+  .post('/createDocumentSigningProcess', uploadMiddleware.single('document'), handleCreateDocumentSigningProcess);
 
 module.exports = router;
